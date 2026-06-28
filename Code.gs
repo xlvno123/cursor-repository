@@ -45,6 +45,18 @@ const CONFIG = {
 };
 
 /**
+ * Wrapper untuk tombol Run default Apps Script.
+ *
+ * Jika editor masih memilih fungsi myFunction, fungsi ini akan tetap menjalankan
+ * pengecekan limit pengiriman.
+ *
+ * @return {Object} Ringkasan limit yang juga muncul di execution log.
+ */
+function myFunction() {
+  return cekLimitPengiriman();
+}
+
+/**
  * Fungsi utama untuk cek sisa limit pengiriman email.
  *
  * Jalankan fungsi ini dari Apps Script editor.

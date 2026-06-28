@@ -19,6 +19,8 @@ mengirim email massal sampai terkena limit.
 3. Hapus isi default `Code.gs`.
 4. Tempel isi file `Code.gs` dari repo ini.
 5. Jalankan fungsi `cekLimitPengiriman`.
+   - Jika dropdown Run masih memilih `myFunction`, itu juga aman karena
+     `myFunction()` sudah diarahkan ke `cekLimitPengiriman()`.
 6. Izinkan permission yang diminta Google.
 7. Buka **Executions** atau **Logs** untuk melihat hasil.
 
@@ -64,6 +66,11 @@ Catatan: quota Apps Script/MailApp bisa berbeda dari limit SMTP Gmail atau
 Google Workspace. Angka final tetap bergantung pada jenis akun dan aturan admin.
 
 ## Fungsi yang tersedia
+
+### `myFunction()`
+
+Alias untuk tombol Run default Apps Script. Fungsi ini langsung memanggil
+`cekLimitPengiriman()`.
 
 ### `cekLimitPengiriman()`
 
