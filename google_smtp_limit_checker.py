@@ -64,7 +64,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--record-note",
-        default="manual record",
+        default=None,
         help="Catatan untuk --record atau kirim uji.",
     )
     parser.add_argument(
@@ -279,7 +279,13 @@ def main() -> int:
     state = load_state(args.state_file)
 
     if args.record:
-        add_usage(state, args.account, day, args.record, args.record_note)
+        add_usage(
+            state,
+            args.account,
+            day,
+            args.record,
+            args.record_note or "manual record",
+        )
         save_state(args.state_file, state)
 
     recipients = parse_recipients(args.to)
